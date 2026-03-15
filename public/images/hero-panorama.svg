@@ -1,0 +1,27 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#F6F0E7"/>
+  <rect x="86" y="72" width="1428" height="184" rx="92" fill="rgba(255,255,255,0.75)" stroke="rgba(20,19,18,0.08)"/>
+  <rect x="70" y="232" width="1460" height="698" rx="48" fill="url(#sky)"/>
+  <path d="M0 702C140 610 291 565 451 568C633 571 752 685 929 678C1129 671 1318 514 1600 522V1000H0V702Z" fill="#A4C19F"/>
+  <path d="M0 785C176 721 322 700 470 722C655 749 810 872 999 869C1205 867 1370 715 1600 664V1000H0V785Z" fill="#76946E"/>
+  <path d="M0 845C145 835 344 789 520 827C660 857 786 941 998 932C1180 924 1377 817 1600 780V1000H0V845Z" fill="#496251"/>
+  <path d="M232 787C335 744 390 718 471 718C548 718 625 759 740 759C844 759 938 709 1012 673C1076 642 1137 620 1211 620C1289 620 1360 650 1468 720" stroke="rgba(255,255,255,0.18)" stroke-width="8" stroke-linecap="round"/>
+  <g filter="url(#soft)">
+    <circle cx="240" cy="170" r="13" fill="#35493F"/>
+    <circle cx="1360" cy="162" r="11" fill="#C1834B"/>
+    <circle cx="1278" cy="472" r="9" fill="#35493F"/>
+    <circle cx="318" cy="512" r="8" fill="#C1834B"/>
+  </g>
+  <defs>
+    <linearGradient id="sky" x1="800" y1="232" x2="800" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAF7F2"/>
+      <stop offset="0.44" stop-color="#E3EBDC"/>
+      <stop offset="1" stop-color="#D4C6B4"/>
+    </linearGradient>
+    <filter id="soft" x="214" y="144" width="1172" height="354" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_1_1"/>
+    </filter>
+  </defs>
+</svg>

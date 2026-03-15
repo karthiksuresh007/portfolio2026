@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+coverage/
+*.log
+*.tsbuildinfo
+Thumbs.db
+Desktop.ini
+
+.codex/
