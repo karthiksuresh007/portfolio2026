@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import { MotionCard } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracked-link";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { glowPalettes } from "@/lib/glow";
 import { Button } from "@/components/ui/liquid-glass-button";
 import type { CaseStudyProject } from "@/types/content";
 
@@ -13,7 +15,16 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, compact = false }: ProjectCardProps) {
   return (
-    <MotionCard className="group h-full rounded-[2rem] border border-black/5 bg-white/72 p-4 shadow-panel backdrop-blur-xl">
+    <MotionCard className="group relative h-full rounded-[2rem] border border-black/5 bg-white/72 p-4 shadow-panel backdrop-blur-xl">
+      <GlowingEffect
+        spread={38}
+        proximity={88}
+        inactiveZone={0.18}
+        borderWidth={2}
+        disabled={false}
+        colors={glowPalettes.sage}
+        className="rounded-[2rem]"
+      />
       <div className="relative overflow-hidden rounded-[1.5rem]">
         <div className={`absolute inset-0 bg-gradient-to-br ${project.accent}`} />
         <Image

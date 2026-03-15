@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Reveal } from "@/components/motion/reveal";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { SectionShell } from "@/components/ui/section-shell";
 import {
   achievements,
@@ -10,6 +11,7 @@ import {
   skillGroups,
   timeline
 } from "@/content/site";
+import { glowPalettes } from "@/lib/glow";
 
 export const metadata: Metadata = {
   title: "About",
@@ -27,7 +29,8 @@ export default function AboutPage() {
       >
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
-            <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+            <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <GlowingEffect disabled={true} spread={34} proximity={70} borderWidth={2} colors={glowPalettes.warm} className="rounded-[2rem]" />
               <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Profile</p>
               <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink">{siteConfig.role}</h2>
               <p className="mt-5 text-sm leading-7 text-ink/72">{siteConfig.headline}</p>
@@ -35,7 +38,8 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+            <div className="relative rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+              <GlowingEffect variant="white" disabled={true} spread={30} proximity={60} borderWidth={2} className="rounded-[2rem]" />
               <p className="text-xs uppercase tracking-[0.3em] text-paper/55">Current focus</p>
               <h2 className="mt-4 font-serif text-4xl tracking-tight">{siteConfig.availability}</h2>
               <p className="mt-5 text-sm leading-7 text-paper/82">{siteConfig.availabilityDetail}</p>
@@ -52,7 +56,8 @@ export default function AboutPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {skillGroups.map((group, index) => (
             <Reveal key={group.title} delay={index * 0.08}>
-              <article className="rounded-[2rem] border border-black/5 bg-white/72 p-6 shadow-panel backdrop-blur-xl">
+              <article className="relative rounded-[2rem] border border-black/5 bg-white/72 p-6 shadow-panel backdrop-blur-xl">
+                <GlowingEffect disabled={true} spread={28} proximity={56} borderWidth={2} colors={glowPalettes.sage} className="rounded-[2rem]" />
                 <h3 className="font-serif text-3xl tracking-tight text-ink">{group.title}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {group.items.map((item) => (
@@ -78,7 +83,8 @@ export default function AboutPage() {
         <div className="grid gap-5 lg:grid-cols-3">
           {education.map((item, index) => (
             <Reveal key={item.institution} delay={index * 0.08}>
-              <article className="rounded-[2rem] border border-black/5 bg-white/72 p-6 shadow-panel backdrop-blur-xl">
+              <article className="relative rounded-[2rem] border border-black/5 bg-white/72 p-6 shadow-panel backdrop-blur-xl">
+                <GlowingEffect disabled={true} spread={28} proximity={56} borderWidth={2} colors={glowPalettes.pearl} className="rounded-[2rem]" />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">{item.timeline}</p>
                 <h3 className="mt-4 font-serif text-3xl tracking-tight text-ink">{item.institution}</h3>
                 <p className="mt-4 text-sm leading-7 text-ink/70">{item.detail}</p>
@@ -96,7 +102,8 @@ export default function AboutPage() {
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
-            <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+            <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <GlowingEffect disabled={true} spread={34} proximity={70} borderWidth={2} colors={glowPalettes.warm} className="rounded-[2rem]" />
               <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Certificates</p>
               <div className="mt-5 grid gap-4">
                 {certificates.map((item) => (
@@ -120,7 +127,8 @@ export default function AboutPage() {
           </Reveal>
           <div className="grid gap-6">
             <Reveal delay={0.08}>
-              <div className="rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+              <div className="relative rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+                <GlowingEffect variant="white" disabled={true} spread={28} proximity={56} borderWidth={2} className="rounded-[2rem]" />
                 <p className="text-xs uppercase tracking-[0.3em] text-paper/55">Achievements</p>
                 <div className="mt-5 space-y-4">
                   {achievements.map((item) => (
@@ -136,7 +144,8 @@ export default function AboutPage() {
               </div>
             </Reveal>
             <Reveal delay={0.14}>
-              <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+                <GlowingEffect disabled={true} spread={34} proximity={70} borderWidth={2} colors={glowPalettes.ember} className="rounded-[2rem]" />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Growth</p>
                 <div className="mt-5 space-y-4">
                   {timeline.map((item) => (

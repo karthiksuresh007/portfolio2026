@@ -7,6 +7,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { glowPalettes } from "@/lib/glow";
 import { cn } from "@/lib/utils";
 
 interface GalleryHoverCarouselItem {
@@ -152,6 +154,16 @@ export default function GalleryHoverCarousel({
             >
               <Link href={item.url} className="group block h-full">
                 <Card className="relative h-[420px] overflow-hidden rounded-[2.2rem] border border-black/5 bg-white/70">
+                  <GlowingEffect
+                    blur={0}
+                    spread={44}
+                    proximity={96}
+                    inactiveZone={0.12}
+                    borderWidth={2}
+                    disabled={false}
+                    colors={glowPalettes.warm}
+                    className="rounded-[2.2rem]"
+                  />
                   <Image
                     width={900}
                     height={1200}

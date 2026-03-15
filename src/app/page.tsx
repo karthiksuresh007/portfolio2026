@@ -3,6 +3,7 @@ import { ArrowRight, Download, Mail } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracked-link";
 import GalleryHoverCarousel from "@/components/ui/gallery-hover-carousel";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button, LiquidLinkButton } from "@/components/ui/liquid-glass-button";
 import { SectionShell } from "@/components/ui/section-shell";
 import {
@@ -14,6 +15,7 @@ import {
   skillGroups,
   supportingProjects
 } from "@/content/site";
+import { glowPalettes } from "@/lib/glow";
 
 export default function HomePage() {
   const spotlightSkills = skillGroups.flatMap((group) => group.items).slice(0, 9);
@@ -34,6 +36,15 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <Reveal>
             <div className="relative overflow-hidden rounded-[2.8rem] border border-black/5 bg-white/76 p-7 shadow-float backdrop-blur-xl sm:p-10">
+              <GlowingEffect
+                spread={54}
+                proximity={120}
+                inactiveZone={0.2}
+                borderWidth={2}
+                disabled={false}
+                colors={glowPalettes.warm}
+                className="rounded-[2.8rem]"
+              />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.96),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(193,131,75,0.15),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(53,73,63,0.12),transparent_24%)]" />
               <div className="relative">
                 <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.28em] text-clay/80">
@@ -86,7 +97,16 @@ export default function HomePage() {
           </Reveal>
           <div className="grid gap-6">
             <Reveal delay={0.08}>
-              <div className="rounded-[2.2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+              <div className="relative rounded-[2.2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+                <GlowingEffect
+                  variant="white"
+                  spread={42}
+                  proximity={100}
+                  inactiveZone={0.12}
+                  borderWidth={2}
+                  disabled={false}
+                  className="rounded-[2.2rem]"
+                />
                 <p className="text-xs uppercase tracking-[0.3em] text-paper/55">Quick read</p>
                 <h2 className="mt-4 font-serif text-4xl tracking-tight">
                   Recruiter-friendly. Product-minded. Full-stack ready.
@@ -108,7 +128,16 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={0.14}>
-              <div className="rounded-[2.2rem] border border-black/5 bg-white/76 p-7 shadow-panel backdrop-blur-xl">
+              <div className="relative rounded-[2.2rem] border border-black/5 bg-white/76 p-7 shadow-panel backdrop-blur-xl">
+                <GlowingEffect
+                  spread={34}
+                  proximity={80}
+                  inactiveZone={0.22}
+                  borderWidth={2}
+                  disabled={true}
+                  colors={glowPalettes.pearl}
+                  className="rounded-[2.2rem]"
+                />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Education snapshot</p>
                 <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink">
                   {highlightedEducation.institution}
@@ -141,7 +170,16 @@ export default function HomePage() {
           <div className="grid gap-6 md:grid-cols-3">
             {proofItems.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.08}>
-                <article className="h-full rounded-[2rem] border border-black/5 bg-white/72 p-6 shadow-panel backdrop-blur-xl">
+                <article className="relative h-full rounded-[2rem] border border-black/5 bg-white/72 p-6 shadow-panel backdrop-blur-xl">
+                  <GlowingEffect
+                    spread={30}
+                    proximity={60}
+                    inactiveZone={0.28}
+                    borderWidth={2}
+                    disabled={true}
+                    colors={glowPalettes.sage}
+                    className="rounded-[2rem]"
+                  />
                   <p className="text-xs uppercase tracking-[0.3em] text-clay/80">
                     0{index + 1}
                   </p>
@@ -152,7 +190,16 @@ export default function HomePage() {
             ))}
           </div>
           <Reveal delay={0.12}>
-            <div className="rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+            <div className="relative rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+              <GlowingEffect
+                variant="white"
+                spread={30}
+                proximity={70}
+                inactiveZone={0.28}
+                borderWidth={2}
+                disabled={true}
+                className="rounded-[2rem]"
+              />
               <p className="text-xs uppercase tracking-[0.3em] text-paper/55">Core stack</p>
               <h3 className="mt-4 font-serif text-4xl tracking-tight">
                 React, Next.js, Node.js, Express.js, MongoDB, Firebase.
@@ -170,7 +217,16 @@ export default function HomePage() {
       >
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
-            <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+            <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <GlowingEffect
+                spread={34}
+                proximity={80}
+                inactiveZone={0.24}
+                borderWidth={2}
+                disabled={true}
+                colors={glowPalettes.warm}
+                className="rounded-[2rem]"
+              />
               <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Skills</p>
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 {skillGroups.map((group) => (
@@ -195,7 +251,16 @@ export default function HomePage() {
           </Reveal>
           <div className="grid gap-6">
             <Reveal>
-              <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+                <GlowingEffect
+                  spread={34}
+                  proximity={80}
+                  inactiveZone={0.24}
+                  borderWidth={2}
+                  disabled={true}
+                  colors={glowPalettes.sage}
+                  className="rounded-[2rem]"
+                />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Education</p>
                 <div className="mt-5 space-y-4">
                   {education.map((item) => (
@@ -221,7 +286,16 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+                <GlowingEffect
+                  spread={34}
+                  proximity={80}
+                  inactiveZone={0.24}
+                  borderWidth={2}
+                  disabled={true}
+                  colors={glowPalettes.ember}
+                  className="rounded-[2rem]"
+                />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Achievements</p>
                 <div className="mt-5 grid gap-4">
                   {achievements.map((item) => (
@@ -246,7 +320,16 @@ export default function HomePage() {
         intro="If you want to review the work in depth, open the case studies. If the fit already feels right, reach out directly."
       >
         <Reveal>
-          <div className="rounded-[2.5rem] border border-black/5 bg-white/75 p-8 shadow-float backdrop-blur-xl">
+          <div className="relative rounded-[2.5rem] border border-black/5 bg-white/75 p-8 shadow-float backdrop-blur-xl">
+            <GlowingEffect
+              spread={42}
+              proximity={100}
+              inactiveZone={0.18}
+              borderWidth={2}
+              disabled={false}
+              colors={glowPalettes.warm}
+              className="rounded-[2.5rem]"
+            />
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
               <div>
                 <p className="text-sm leading-8 text-ink/72">{siteConfig.availabilityDetail}</p>
@@ -263,7 +346,16 @@ export default function HomePage() {
                   </Button>
                 </div>
               </div>
-              <div className="rounded-[2rem] border border-black/5 bg-paper/70 p-6">
+              <div className="relative rounded-[2rem] border border-black/5 bg-paper/70 p-6">
+                <GlowingEffect
+                  spread={28}
+                  proximity={60}
+                  inactiveZone={0.32}
+                  borderWidth={2}
+                  disabled={true}
+                  colors={glowPalettes.pearl}
+                  className="rounded-[2rem]"
+                />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Direct links</p>
                 <div className="mt-4 space-y-3 text-sm leading-7 text-ink/70">
                   <p>GitHub: github.com/karthiksuresh007</p>

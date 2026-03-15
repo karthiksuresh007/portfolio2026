@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Download, Mail, Phone } from "lucide-react";
 
 import { Reveal } from "@/components/motion/reveal";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button, LiquidLinkButton } from "@/components/ui/liquid-glass-button";
 import { SectionShell } from "@/components/ui/section-shell";
 import { siteConfig } from "@/content/site";
+import { glowPalettes } from "@/lib/glow";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -21,7 +23,8 @@ export default function ContactPage() {
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
         <Reveal>
-          <div className="rounded-[2.2rem] border border-black/5 bg-white/75 p-8 shadow-float backdrop-blur-xl">
+          <div className="relative rounded-[2.2rem] border border-black/5 bg-white/75 p-8 shadow-float backdrop-blur-xl">
+            <GlowingEffect disabled={false} spread={42} proximity={100} inactiveZone={0.18} borderWidth={2} colors={glowPalettes.warm} className="rounded-[2.2rem]" />
             <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Best ways to reach me</p>
             <h2 className="mt-4 font-serif text-5xl tracking-tight text-ink">
               {siteConfig.availability}
@@ -48,14 +51,15 @@ export default function ContactPage() {
               </Button>
             </div>
             <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {siteConfig.contactLinks.map((link) => (
+              {siteConfig.contactLinks.map((link, index) => (
                 <a
                   key={link.label}
                   href={link.href}
                   rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
-                  className="rounded-[1.5rem] border border-black/5 bg-paper/70 p-5 text-sm font-medium text-ink transition hover:-translate-y-1 hover:bg-paper"
+                  className="relative rounded-[1.5rem] border border-black/5 bg-paper/70 p-5 text-sm font-medium text-ink transition hover:-translate-y-1 hover:bg-paper"
                 >
+                  <GlowingEffect disabled={true} spread={24} proximity={48} borderWidth={2} colors={index % 2 === 0 ? glowPalettes.pearl : glowPalettes.sage} className="rounded-[1.5rem]" />
                   <span className="block text-xs uppercase tracking-[0.3em] text-clay/80">Contact</span>
                   <span className="mt-4 block font-serif text-2xl tracking-tight">{link.label}</span>
                 </a>
@@ -64,7 +68,8 @@ export default function ContactPage() {
           </div>
         </Reveal>
         <Reveal delay={0.08}>
-          <div className="rounded-[2.2rem] border border-black/5 bg-ink p-8 text-paper shadow-panel">
+          <div className="relative rounded-[2.2rem] border border-black/5 bg-ink p-8 text-paper shadow-panel">
+            <GlowingEffect variant="white" disabled={true} spread={30} proximity={60} borderWidth={2} className="rounded-[2.2rem]" />
             <p className="text-xs uppercase tracking-[0.3em] text-paper/55">What I enjoy building</p>
             <h2 className="mt-4 font-serif text-4xl tracking-tight">AI products, consumer workflows, marketplaces, and polished web platforms.</h2>
             <div className="mt-6 space-y-4 text-sm leading-7 text-paper/82">

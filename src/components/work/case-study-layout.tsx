@@ -3,9 +3,11 @@ import Image from "next/image";
 
 import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracked-link";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button, LiquidLinkButton } from "@/components/ui/liquid-glass-button";
 import { SectionShell } from "@/components/ui/section-shell";
 import { siteConfig } from "@/content/site";
+import { glowPalettes } from "@/lib/glow";
 import type { CaseStudyProject } from "@/types/content";
 
 interface CaseStudyLayoutProps {
@@ -19,7 +21,8 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
       <section className="px-5 pb-8 pt-10 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal>
-            <div className="rounded-[2.5rem] border border-black/5 bg-white/70 p-7 shadow-panel backdrop-blur-xl">
+            <div className="relative rounded-[2.5rem] border border-black/5 bg-white/70 p-7 shadow-panel backdrop-blur-xl">
+              <GlowingEffect disabled={false} spread={42} proximity={100} inactiveZone={0.16} borderWidth={2} colors={glowPalettes.warm} className="rounded-[2.5rem]" />
               <p className="text-xs uppercase tracking-[0.35em] text-clay/80">{project.eyebrow}</p>
               <h1 className="mt-5 font-serif text-5xl tracking-tight text-ink sm:text-6xl">
                 {project.title}
@@ -40,6 +43,7 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
           </Reveal>
           <Reveal delay={0.08}>
             <div className="relative overflow-hidden rounded-[2.5rem] border border-black/5 bg-white/70 p-4 shadow-panel backdrop-blur-xl">
+              <GlowingEffect disabled={false} spread={42} proximity={100} inactiveZone={0.16} borderWidth={2} colors={glowPalettes.sage} className="rounded-[2.5rem]" />
               <div className={`absolute inset-0 bg-gradient-to-br ${project.accent}`} />
               <Image
                 src={project.heroImage}
@@ -60,7 +64,8 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
         <div className="grid gap-5 lg:grid-cols-2">
           {project.chapters.map((chapter, index) => (
             <Reveal key={chapter.title} delay={index * 0.06}>
-              <article className="h-full rounded-[1.75rem] border border-black/5 bg-white/70 p-6 shadow-panel backdrop-blur-xl">
+              <article className="relative h-full rounded-[1.75rem] border border-black/5 bg-white/70 p-6 shadow-panel backdrop-blur-xl">
+                <GlowingEffect disabled={true} spread={30} proximity={56} borderWidth={2} colors={index % 2 === 0 ? glowPalettes.pearl : glowPalettes.ember} className="rounded-[1.75rem]" />
                 <p className="text-xs uppercase tracking-[0.3em] text-clay/80">
                   Chapter {String(index + 1).padStart(2, "0")}
                 </p>
@@ -78,7 +83,8 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
       >
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
-            <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+            <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <GlowingEffect disabled={true} spread={34} proximity={70} borderWidth={2} colors={glowPalettes.sage} className="rounded-[2rem]" />
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Role</p>
@@ -117,7 +123,8 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
             </div>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+            <div className="relative rounded-[2rem] border border-black/5 bg-ink p-7 text-paper shadow-panel">
+              <GlowingEffect variant="white" disabled={true} spread={28} proximity={56} borderWidth={2} className="rounded-[2rem]" />
               <p className="text-xs uppercase tracking-[0.3em] text-paper/55">What this project proves</p>
               <div className="mt-5 space-y-4">
                 {project.lessons.map((lesson) => (
@@ -137,7 +144,8 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
       >
         <div className="grid gap-5 lg:grid-cols-[1fr_auto]">
           {nextProject ? (
-            <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+            <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+              <GlowingEffect disabled={true} spread={34} proximity={70} borderWidth={2} colors={glowPalettes.pearl} className="rounded-[2rem]" />
               <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Next project</p>
               <h2 className="mt-4 font-serif text-3xl tracking-tight text-ink">{nextProject.title}</h2>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/70">{nextProject.outcome}</p>
@@ -153,7 +161,8 @@ export function CaseStudyLayout({ project, nextProject }: CaseStudyLayoutProps) 
               </Button>
             </div>
           ) : null}
-          <div className="rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+          <div className="relative rounded-[2rem] border border-black/5 bg-white/72 p-7 shadow-panel backdrop-blur-xl">
+            <GlowingEffect disabled={false} spread={36} proximity={80} inactiveZone={0.2} borderWidth={2} colors={glowPalettes.warm} className="rounded-[2rem]" />
             <p className="text-xs uppercase tracking-[0.3em] text-clay/80">Connect</p>
             <h2 className="mt-4 font-serif text-3xl tracking-tight text-ink">
               Interested in building something together?
