@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
+import { GlobalClickParticles } from "@/components/ui/global-click-particles";
 import { siteConfig } from "@/content/site";
 import "./globals.css";
 
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
         <div className="site-shell">
+          <GlobalClickParticles />
           <div className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:var(--grid-image)] [background-position:center] [background-size:80px_80px]" />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.88),transparent_48%),radial-gradient(circle_at_bottom_right,rgba(193,131,75,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(53,73,63,0.18),transparent_32%)]" />
           <div className="relative z-10 min-h-screen">
