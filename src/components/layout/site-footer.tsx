@@ -1,4 +1,4 @@
-import { TrackedLink } from "@/components/tracked-link";
+﻿import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/content/site";
 
 export function SiteFooter() {
@@ -11,7 +11,7 @@ export function SiteFooter() {
             Full-stack web developer building responsive products with clean UI and dependable systems.
           </h2>
           <p className="mt-4 max-w-xl text-sm leading-7 text-ink/70 sm:text-base">
-            Portfolio focused on AI-enabled tools, modern web apps, backend workflows, and recruiter-ready project depth.
+            Portfolio focused on AI-enabled tools, modern web apps, backend workflows, recruiter-ready project depth, and the ideas that shape how I build.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6">
@@ -20,6 +20,7 @@ export function SiteFooter() {
             <div className="mt-4 space-y-3 text-sm text-ink/75">
               <TrackedLink href="/">Home</TrackedLink>
               <TrackedLink href="/work">Work</TrackedLink>
+              <TrackedLink href="/explore">Explore</TrackedLink>
               <TrackedLink href="/about">About</TrackedLink>
               <TrackedLink href="/contact">Contact</TrackedLink>
             </div>
@@ -44,3 +45,4 @@ export function SiteFooter() {
     </footer>
   );
 }
+

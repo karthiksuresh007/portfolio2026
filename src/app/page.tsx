@@ -6,6 +6,7 @@ import GalleryHoverCarousel from "@/components/ui/gallery-hover-carousel";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Button, LiquidLinkButton } from "@/components/ui/liquid-glass-button";
 import { SectionShell } from "@/components/ui/section-shell";
+import { ShaderAnimation } from "@/components/ui/shader-lines";
 import {
   achievements,
   education,
@@ -45,6 +46,11 @@ export default function HomePage() {
                 colors={glowPalettes.warm}
                 className="rounded-[2.8rem]"
               />
+              <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[2.8rem]">
+                <div className="absolute inset-0 opacity-[0.16] saturate-[0.6] [mask-image:radial-gradient(circle_at_72%_36%,black_0%,black_34%,transparent_78%)] mix-blend-multiply">
+                  <ShaderAnimation />
+                </div>
+              </div>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.96),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(193,131,75,0.15),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(53,73,63,0.12),transparent_24%)]" />
               <div className="relative">
                 <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.28em] text-clay/80">
