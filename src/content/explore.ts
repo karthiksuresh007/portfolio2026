@@ -1,4 +1,4 @@
-﻿export interface ExploreHeroContent {
+export interface ExploreHeroContent {
   eyebrow: string;
   title: string;
   description: string;
@@ -14,6 +14,7 @@ export interface ExploreAdmiration {
   name: string;
   category: string;
   note: string;
+  image: string;
 }
 
 export interface ExploreBook {
@@ -68,47 +69,65 @@ export const admiredPeople: ExploreAdmiration[] = [
   {
     name: "Alan Turing",
     category: "Computer science",
-    note: "For the combination of mathematical depth, imagination, and historical courage."
+    note: "Mathematical depth, imagination, and historical courage in one mind.",
+    image:
+      "/images/explore/people/alan-turing.jpg"
   },
   {
     name: "Donald Knuth",
     category: "Computer science",
-    note: "For treating programming as both engineering and intellectual craftsmanship."
+    note: "Programming treated as both engineering discipline and intellectual craft.",
+    image:
+      "/images/explore/people/donald-knuth.jpg"
   },
   {
     name: "Dennis Ritchie",
     category: "Computer science",
-    note: "For the elegance and long shadow of foundational systems work."
+    note: "Foundational systems work with elegance that still echoes everywhere.",
+    image:
+      "/images/explore/people/dennis-ritchie.jpg"
   },
   {
     name: "Linus Torvalds",
     category: "Builder",
-    note: "For pragmatic engineering judgment and a bias toward durable systems."
+    note: "Pragmatic judgment, sharp standards, and a bias toward durable systems.",
+    image:
+      "/images/explore/people/linus-torvalds.jpeg"
   },
   {
     name: "John Carmack",
     category: "Builder",
-    note: "For relentless technical clarity and first-principles problem solving."
+    note: "Relentless technical clarity and first-principles problem solving.",
+    image:
+      "/images/explore/people/john-carmack.jpg"
   },
   {
     name: "Steve Jobs",
     category: "Visionary",
-    note: "For insisting that product, story, and craftsmanship belong together."
+    note: "Product, story, and craftsmanship treated as one continuous decision.",
+    image:
+      "/images/explore/people/steve-jobs.jpg"
   },
   {
     name: "Naval Ravikant",
     category: "Thinker",
-    note: "For ideas about leverage, clarity, and building a life around compounding."
+    note: "Clear thinking on leverage, compounding, and long-term games.",
+    image:
+      "/images/explore/people/naval-ravikant.jpg"
   },
   {
     name: "Christopher Nolan",
     category: "Storytelling",
-    note: "For scale, structure, and ambition without losing emotional precision."
+    note: "Ambition, structure, and scale without losing emotional precision.",
+    image:
+      "/images/explore/people/christopher-nolan.jpg"
   },
   {
     name: "Hans Zimmer",
     category: "Music",
-    note: "For creating momentum, atmosphere, and tension through disciplined composition."
+    note: "Atmosphere, tension, and momentum built with disciplined composition.",
+    image:
+      "/images/explore/people/hans-zimmer.jpg"
   }
 ];
 

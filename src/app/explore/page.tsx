@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 import { BookCard } from "@/components/explore/book-card";
 import { ExploreHero } from "@/components/explore/explore-hero";
@@ -7,6 +7,7 @@ import { InspirationCard } from "@/components/explore/inspiration-card";
 import { InterestGrid } from "@/components/explore/interest-grid";
 import { QuoteBlock } from "@/components/explore/quote-block";
 import { Reveal } from "@/components/motion/reveal";
+import ExpandCards from "@/components/ui/expand-cards";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import {
   admiredPeople,
@@ -67,16 +68,9 @@ export default function ExplorePage() {
         title="Thinkers, builders, and creators with unusually strong signals"
         intro="Some people influence technique. Others influence standards. The most memorable ones change the way ambition itself looks."
       >
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {admiredPeople.map((person) => (
-            <InspirationCard
-              key={person.name}
-              title={person.name}
-              meta={person.category}
-              caption={person.note}
-            />
-          ))}
-        </div>
+        <Reveal>
+          <ExpandCards items={admiredPeople} />
+        </Reveal>
       </ExploreSection>
 
       <ExploreSection
@@ -213,4 +207,3 @@ export default function ExplorePage() {
     </>
   );
 }
-
