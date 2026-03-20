@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { Allura } from "next/font/google";
 
 import { Reveal } from "@/components/motion/reveal";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
@@ -7,11 +6,6 @@ import { glowPalettes } from "@/lib/glow";
 
 const InfiniteGallery = dynamic(() => import("@/components/ui/3d-gallery-photography"), {
   ssr: false
-});
-
-const signature = Allura({
-  subsets: ["latin"],
-  weight: ["400"]
 });
 
 interface ExploreHeroProps {
@@ -79,9 +73,6 @@ export function ExploreHero({ title, galleryImages }: ExploreHeroProps) {
               <h1 className="max-w-4xl font-serif text-[4.5rem] leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_18px_40px_rgba(0,0,0,0.36)] sm:text-[6.75rem] lg:text-[9rem] xl:text-[10rem]">
                 {title}
               </h1>
-              <p className={`${signature.className} mt-4 ml-1 text-[2.5rem] leading-none tracking-[0.01em] text-white drop-shadow-[0_10px_26px_rgba(0,0,0,0.28)] sm:text-[3.1rem] lg:ml-2 lg:text-[4.05rem] xl:text-[4.6rem]`}>
-                Karthik Suresh
-              </p>
             </div>
           </div>
         </div>
@@ -89,4 +80,3 @@ export function ExploreHero({ title, galleryImages }: ExploreHeroProps) {
     </section>
   );
 }
-
