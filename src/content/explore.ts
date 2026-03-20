@@ -3,6 +3,7 @@ export interface ExploreHeroContent {
   title: string;
   description: string;
   fragments: string[];
+  galleryImages: string[];
 }
 
 export interface ExploreMindsetItem {
@@ -44,7 +45,20 @@ export const exploreHero: ExploreHeroContent = {
   title: "Beyond code.",
   description:
     "A curated space for the ideas, films, books, sounds, and strategic obsessions that quietly shape how I build. It is less a feed and more a window into the systems, stories, and standards I keep returning to.",
-  fragments: ["Curiosity as practice", "Systems over noise", "Taste is part of engineering"]
+  fragments: ["Curiosity as practice", "Systems over noise", "Taste is part of engineering"],
+  galleryImages: [
+    "/images/explore/hero/v1.jpg",
+    "/images/explore/hero/v2.jpg",
+    "/images/explore/hero/v3.jpg",
+    "/images/explore/hero/v4.jpg",
+    "/images/explore/hero/v5.jpg",
+    "/images/explore/hero/v6.jpg",
+    "/images/explore/hero/v7.jpg",
+    "/images/explore/hero/v8.jpg",
+    "/images/explore/hero/v9.jpg",
+    "/images/explore/hero/v10.jpg",
+    "/images/explore/hero/v11.jpg"
+  ]
 };
 
 export const builderMindset: ExploreMindsetItem[] = [
@@ -70,64 +84,55 @@ export const admiredPeople: ExploreAdmiration[] = [
     name: "Alan Turing",
     category: "Computer science",
     note: "Mathematical depth, imagination, and historical courage in one mind.",
-    image:
-      "/images/explore/people/alan-turing.jpg"
+    image: "/images/explore/people/alan-turing.jpg"
   },
   {
     name: "Donald Knuth",
     category: "Computer science",
     note: "Programming treated as both engineering discipline and intellectual craft.",
-    image:
-      "/images/explore/people/donald-knuth.jpg"
+    image: "/images/explore/people/donald-knuth.jpg"
   },
   {
     name: "Dennis Ritchie",
     category: "Computer science",
     note: "Foundational systems work with elegance that still echoes everywhere.",
-    image:
-      "/images/explore/people/dennis-ritchie.jpg"
+    image: "/images/explore/people/dennis-ritchie.jpg"
   },
   {
     name: "Linus Torvalds",
     category: "Builder",
     note: "Pragmatic judgment, sharp standards, and a bias toward durable systems.",
-    image:
-      "/images/explore/people/linus-torvalds.jpeg"
+    image: "/images/explore/people/linus-torvalds.jpeg"
   },
   {
     name: "John Carmack",
     category: "Builder",
     note: "Relentless technical clarity and first-principles problem solving.",
-    image:
-      "/images/explore/people/john-carmack.jpg"
+    image: "/images/explore/people/john-carmack.jpg"
   },
   {
     name: "Steve Jobs",
     category: "Visionary",
     note: "Product, story, and craftsmanship treated as one continuous decision.",
-    image:
-      "/images/explore/people/steve-jobs.jpg"
+    image: "/images/explore/people/steve-jobs.jpg"
   },
   {
     name: "Naval Ravikant",
     category: "Thinker",
     note: "Clear thinking on leverage, compounding, and long-term games.",
-    image:
-      "/images/explore/people/naval-ravikant.jpg"
+    image: "/images/explore/people/naval-ravikant.jpg"
   },
   {
     name: "Christopher Nolan",
     category: "Storytelling",
     note: "Ambition, structure, and scale without losing emotional precision.",
-    image:
-      "/images/explore/people/christopher-nolan.jpg"
+    image: "/images/explore/people/christopher-nolan.jpg"
   },
   {
     name: "Hans Zimmer",
     category: "Music",
     note: "Atmosphere, tension, and momentum built with disciplined composition.",
-    image:
-      "/images/explore/people/hans-zimmer.jpg"
+    image: "/images/explore/people/hans-zimmer.jpg"
   }
 ];
 
@@ -263,4 +268,3 @@ export const quoteFragments: ExploreQuote[] = [
 
 export const closingReflection =
   "I like builders who are difficult to categorize: engineers with taste, artists with rigor, thinkers with execution. This page is a small map of the influences that keep me curious and remind me that great work is rarely only technical. It is also philosophical, aesthetic, and deeply human.";
-
